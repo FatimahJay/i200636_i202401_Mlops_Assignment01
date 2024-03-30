@@ -16,7 +16,12 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
-    features = [data['sepal_length'], data['sepal_width'], data['petal_length'], data['petal_width']]
+    features = [
+        data['sepal_length'],
+        data['sepal_width'],
+        data['petal_length'],
+        data['petal_width']
+    ]
     features = np.array(features).reshape(1, -1)
     prediction = model.predict(features)
     return jsonify({'prediction': int(prediction[0])})

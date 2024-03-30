@@ -11,7 +11,8 @@ def train_and_save_model():
     X, y = iris.data, iris.target
 
     # Splitting dataset into train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42)
 
     # Initializing & training a Random Forest classifier
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
