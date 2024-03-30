@@ -4,6 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import joblib
 
+
 def train_and_save_model():
     # Loading the Iris dataset
     iris = load_iris()
@@ -16,7 +17,7 @@ def train_and_save_model():
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X_train, y_train)
 
-    # Makeing predictions on the test set
+    # Making predictions on the test set
     y_pred = clf.predict(X_test)
 
     # Calculating accuracy
@@ -25,6 +26,7 @@ def train_and_save_model():
 
     # Saving the trained model
     joblib.dump(clf, 'model.pkl')
+
 
 if __name__ == "__main__":
     train_and_save_model()
